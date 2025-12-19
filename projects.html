@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects — Adam Nordquist</title>
+    <meta
+      name="description"
+      content="Data analytics, dashboards, and statistical modeling projects by Adam Nordquist."
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <h1 class="site-title">Adam Nordquist</h1>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="data.html" class="active">Data</a>
+        <a href="music.html">Music</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section>
+        <h2>Data & Analytics</h2>
+        <p>
+          Selected projects spanning statistical modeling, Bayesian inference,
+          sports analytics, and decision-focused reporting.
+        </p>
+      </section>
+
+      <section>
+        <h2>Analytics & Dashboards</h2>
+
+        <div class="gallery">
+          <figure>
+            <div class="img-placeholder"></div>
+            <figcaption>nordWAR — Baseball WAR modeling & reporting</figcaption>
+          </figure>
+
+          <figure>
+            <div class="img-placeholder"></div>
+            <figcaption>BayesWinery — Bayesian wine quality modeling</figcaption>
+          </figure>
+
+          <figure>
+            <div class="img-placeholder"></div>
+            <figcaption>Tripoley — Exact probability modeling</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h2>Code Projects</h2>
+
+        <ul class="project-list">
+          <li>
+            <h3>nordWAR</h3>
+            <p>
+              Custom WAR framework for townball and amateur leagues using wOBA,
+              wRAA, positional adjustments, and league constants.
+            </p>
+            <a
+              href="https://github.com/yourusername/nordWAR"
+              target="_blank"
+            >
+              View on GitHub →
+            </a>
+          </li>
+
+          <li>
+            <h3>BayesWinery</h3>
+            <p>
+              Bayesian modeling of wine quality with prior specification,
+              posterior inference, and model evaluation in R.
+            </p>
+            <a
+              href="https://github.com/yourusername/BayesWinery"
+              target="_blank"
+            >
+              View on GitHub →
+            </a>
+          </li>
+
+          <li>
+            <h3>Tripoley</h3>
+            <p>
+              Exact probability calculations and simulations for the card game
+              Tripoley.
+            </p>
+            <span class="muted">Coming soon</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Adam Nordquist</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
