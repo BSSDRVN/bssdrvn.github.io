@@ -22,13 +22,13 @@
   justify-content: space-between;
   align-items: baseline;
   padding: 2rem;
-  background: #8DE1EB;
+  background: #FFFFFF;
   font: bold 1.5rem 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 /* technically the "middle part of the page" */
 .content {
-  background: linear-gradient(180deg,rgba(141, 225, 235, 1) 0%, rgba(81, 177, 214, 1) 100%);
+  background: linear-gradient(180deg,#ffffff 0%, rgba(81, 177, 214, 1) 100%);
   padding: 2rem;
 }
 
@@ -98,4 +98,157 @@ ul.centered-list {
 a.active {
   font-weight: bold;
   text-decoration: underline;
+}
+
+/* =========================================================
+   MUSIC PAGE
+   ========================================================= */
+
+.music-page {
+  background: #fff;
+  color: #111;
+}
+
+.music-page .site-header {
+  background: #fff;
+}
+
+.music-header {
+  padding: 1.5rem 2rem;
+}
+
+.site-name,
+.back-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-name {
+  letter-spacing: 0.08em;
+}
+
+.back-link {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ---- Two-column layout ---- */
+
+.music-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 100px);
+}
+
+.music-section {
+  padding: 3rem clamp(1.5rem, 4vw, 5rem) 5rem;
+}
+
+.music-section + .music-section {
+  border-left: 1px solid #ccc;
+}
+
+
+/* ---- Section headings ---- */
+
+.music-heading {
+  margin-bottom: 2rem;
+}
+
+.music-heading .eyebrow {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+}
+
+.music-heading h1 {
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.95;
+}
+
+
+/* ---- Photography ---- */
+
+.music-gallery {
+  display: grid;
+  gap: 1rem;
+}
+
+.music-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+/* The trombone image is naturally portrait,
+   so let it be tall and dramatic. */
+
+.trombone-section .music-gallery img:first-child {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+
+/* The DJ image is naturally landscape. */
+
+.dj-section .music-gallery img:first-child {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+
+/* ---- Description ---- */
+
+.music-description {
+  max-width: 35rem;
+  margin-top: 2rem;
+  font-size: 1.05rem;
+}
+
+.music-description p {
+  margin: 0;
+}
+
+
+/* ---- Slightly different visual identities ---- */
+
+.trombone-section .eyebrow {
+  color: #8a5a00;
+}
+
+.dj-section .eyebrow {
+  color: #4535a8;
+}
+
+
+/* ---- Mobile ---- */
+
+@media (max-width: 700px) {
+
+  .music-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .music-section {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .music-section + .music-section {
+    border-left: none;
+    border-top: 1px solid #ccc;
+  }
+
+  .music-heading h1 {
+    font-size: 4rem;
+  }
+
 }
