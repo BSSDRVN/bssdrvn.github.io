@@ -1,36 +1,65 @@
-/* ---- CSS Reset (lightweight) ---- */
+/* =========================================================
+   CSS RESET
+   ========================================================= */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Here's the deal: I want the homepage centered, the projects page off to the left, and the music page centered */
 
-/* global content settings */
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+body {
+  margin: 0;
+  color: #111;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+p {
+  margin-top: 0;
+  font: normal 1rem/1.6 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 .site-header,
 .content,
 .site-footer {
   margin: 0 auto;
   text-align: center;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* global header settings */
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   padding: 2rem;
-  background: #FFFFFF;
-  font: bold 1.5rem 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  background: #fff;
+  font: bold 1.5rem 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* technically the "middle part of the page" */
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
 .content {
-  background: linear-gradient(180deg,#ffffff 0%, rgba(81, 177, 214, 1) 100%);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(81, 177, 214, 1) 100%
+  );
   padding: 2rem;
 }
+
 
 .site-footer {
   text-align: center;
@@ -39,10 +68,14 @@
   background: #51b1d6;
 }
 
-/* ---- Typography ---- */
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
 h1 {
-  font: bold 3rem/1.2 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   margin-bottom: 0;
+  font: bold 3rem/1.2 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h2 {
@@ -55,29 +88,30 @@ h3 {
   margin-bottom: 0.25rem;
 }
 
-body, p {
-  margin-top: 0;
-  font: normal 1rem/1.6 'Inter', sans-serif;
-}
 
+/* =========================================================
+   HOMEPAGE LIST
+   ========================================================= */
 
-
-/* trying to fix bulleted lists on homepage*/
 .container {
   text-align: center;
 }
 
 ul.centered-list {
-  display: inline-block; /* Allows the margin: auto to work */
-  text-align: left;     /* Reverts text alignment inside the list to left */
-  margin-left: auto;    /* Centers the list block itself */
+  display: inline-block;
+  margin-left: auto;
   margin-right: auto;
+  text-align: left;
 }
 
-/* ---- Projects page specifics ---- */
+
+/* =========================================================
+   PROJECTS PAGE
+   ========================================================= */
+
 .project-list {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 
 .project-list li {
@@ -87,8 +121,8 @@ ul.centered-list {
 }
 
 .project-list a {
-  text-decoration: none;
   color: #0057ff;
+  text-decoration: none;
 }
 
 .project-list a:hover {
@@ -100,6 +134,7 @@ a.active {
   text-decoration: underline;
 }
 
+
 /* =========================================================
    MUSIC PAGE
    ========================================================= */
@@ -108,6 +143,9 @@ a.active {
   background: #fff;
   color: #111;
 }
+
+
+/* ---- Music header ---- */
 
 .music-page .site-header {
   background: #fff;
@@ -137,7 +175,9 @@ a.active {
 }
 
 
-/* ---- Two-column layout ---- */
+/* =========================================================
+   MUSIC — TWO MAIN COLUMNS
+   ========================================================= */
 
 .music-columns {
   display: grid;
@@ -146,6 +186,7 @@ a.active {
 }
 
 .music-section {
+  min-width: 0;
   padding: 3rem clamp(1.5rem, 4vw, 5rem) 5rem;
 }
 
@@ -154,7 +195,9 @@ a.active {
 }
 
 
-/* ---- Section headings ---- */
+/* =========================================================
+   MUSIC — HEADINGS
+   ========================================================= */
 
 .music-heading {
   margin-bottom: 2rem;
@@ -174,41 +217,39 @@ a.active {
 }
 
 
-/* ---- Photography ---- */
+/* =========================================================
+   MUSIC — PHOTO GRID
+   ========================================================= */
 
 .music-gallery {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 250px;
   gap: 1rem;
 }
+
+
+/* Every image is constrained to its grid cell */
 
 .music-gallery img {
   display: block;
   width: 100%;
-  max-width: 700px;
-  max-height: 450px;
+  height: 100%;
   object-fit: contain;
-  margin: 0 auto;
 }
 
 
-/* The trombone image is naturally portrait,
-   so let it be tall and dramatic. */
+/* First image gets the full width */
 
-.trombone-section .music-gallery img:first-child {
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
+.music-gallery img:first-child {
+  grid-column: 1 / -1;
+  height: 400px;
 }
 
 
-/* The DJ image is naturally landscape. */
-
-.dj-section .music-gallery img:first-child {
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-}
-
-
-/* ---- Description ---- */
+/* =========================================================
+   MUSIC — DESCRIPTION
+   ========================================================= */
 
 .music-description {
   max-width: 35rem;
@@ -221,7 +262,9 @@ a.active {
 }
 
 
-/* ---- Slightly different visual identities ---- */
+/* =========================================================
+   MUSIC — SECTION ACCENTS
+   ========================================================= */
 
 .trombone-section .eyebrow {
   color: #8a5a00;
@@ -232,9 +275,13 @@ a.active {
 }
 
 
-/* ---- Mobile ---- */
+/* =========================================================
+   MUSIC — MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
+
+  /* Stack Trombone and DJ */
 
   .music-columns {
     grid-template-columns: 1fr;
@@ -245,12 +292,27 @@ a.active {
   }
 
   .music-section + .music-section {
-    border-left: none;
     border-top: 1px solid #ccc;
+    border-left: none;
   }
+
+
+  /* Smaller heading */
 
   .music-heading h1 {
     font-size: 4rem;
   }
 
+
+  /* One-column photo grid */
+
+  .music-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
+  }
+
+  .music-gallery img:first-child {
+    grid-column: 1;
+    height: 350px;
+  }
 }
