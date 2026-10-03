@@ -224,6 +224,7 @@ a.active {
 .music-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: 400px;   /* first row = hero image */
   grid-auto-rows: 250px;
   gap: 1rem;
 }
@@ -243,7 +244,6 @@ a.active {
 
 .music-gallery img:first-child {
   grid-column: 1 / -1;
-  height: 400px;
 }
 
 
@@ -270,8 +270,38 @@ a.active {
   color: #8a5a00;
 }
 
+.trombone-section {
+  background-color: rgba(138, 90, 0, 0.2);
+}
+
 .dj-section .eyebrow {
   color: #4535a8;
+}
+
+.dj-section {
+  background-color: rgba(16, 0, 138, 0.2);
+}
+
+/* =========================================================
+   MUSIC — BUTTONS
+   ========================================================= */
+
+.music-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #111;
+  color: #111;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+}
+
+.music-button:hover {
+  background: #111;
+  color: #fff;
 }
 
 
@@ -285,6 +315,8 @@ a.active {
 
   .music-columns {
     grid-template-columns: 1fr;
+    grid-template-rows: 350px;
+    grid-auto-rows: 300px;
   }
 
   .music-section {
@@ -313,6 +345,5 @@ a.active {
 
   .music-gallery img:first-child {
     grid-column: 1;
-    height: 350px;
   }
 }
