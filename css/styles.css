@@ -346,3 +346,81 @@ a.active {
     grid-column: 1;
   }
 }
+
+/* =========================================================
+   HOMEPAGE
+   ========================================================= */
+
+.home-page {
+  background: #fff;
+}
+
+.home-content {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ---- Logo ---- */
+
+.home-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+
+.home-logo img {
+  display: block;
+  width: auto;
+  max-width: 300px;
+  max-height: 180px;
+}
+
+
+/* ---- Three big buttons ---- */
+
+.home-navigation {
+  flex: 1;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.home-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #111;
+  text-decoration: none;
+
+  font: bold clamp(2rem, 6vw, 5rem)/
+        1 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  letter-spacing: -0.03em;
+
+  transition:
+    filter 0.2s ease,
+    letter-spacing 0.2s ease;
+}
+
+.home-button:hover {
+  filter: brightness(0.92);
+  letter-spacing: 0;
+}
+
+
+/* ---- Button colors ---- */
+
+.projects-button {
+  background: #51b1d6;
+}
+
+.music-button {
+  background: #d6a451;
+}
+
+.home-button-link {
+  background: #a451d6;
+}
