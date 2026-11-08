@@ -464,6 +464,16 @@ a.active {
   letter-spacing: 0;
 }
 
+.links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.links-list li {
+  margin-bottom: 0.2rem;
+}
 
 /* ---- Button colors ---- */
 
