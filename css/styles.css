@@ -474,17 +474,3 @@ a.active {
 .links-list li {
   margin-bottom: 0.2rem;
 }
-
-/* ---- Button colors ---- */
-
-.projects-button {
-  background: #2675d5b2;
-}
-
-.homepage-music-button {
-  background: #d8b337;
-}
-
-.about-button-link {
-  background: #b72f8eb1;
-}
